@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color:palegreens ;
+        border-color: blue;
+
+    }
+    table{
+        background-color:yellow;
+        padding:25px;
+        height:200px;
+        width: 240px;
+        border:solid black 2px;
+        border-radius: 10px;
+        
+        
+    }
+    input[type=button]
+    {
+        font-size: 16px;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-right: 10px;
+        height: 30px;
+        width: 50px;
+        background-color: cyan;
+        border-radius: 10px;
+        border:solid red 2px;
+    }
+    #b1
+    {
+        height: 35px;
+        width: 178px;
+        background-color: lightgoldenrodyellow;
+        border: solid blueviolet;
+        font-size: 20px;
+        border-radius: 10px;
+        color:rgb(0, 0, 0);
+      
+    }
+    #b2
+    {
+        height: 35px;
+        width: 178px;
+        border-radius:10px;
+        background-color: red;
+
+    }
+    #b3
+    {
+        height: 35px;
+        width: 178px;
+        background-color: aquamarine;
+        border:solid royalblue;
+        font-size:20px;
+        border-radius: 10px;
+    }
+
+    #s1
+    {
+        height: 35px;
+        width: 170px;
+        background-color:aliceblue;
+        border: solid blueviolet;
+        font-size: 20px;
+        border-radius: 5px;
+        color:black;
+    }
+    #a1
+    {
+        font-size: 20px;
+        height: 35px;
+        width: 170px;
+        background-color: cyan;
+        border-radius: 10px;
+    }
+    h1{
+        margin:100px;
+        color: red;
+    }
+</style>
+
+<h1  align="center ">Application</h1>
+
+<body>
+    <table align="center">
+        <tr>
+            <td colspan="3"><input type="text" id="s1" ></td>
+        </tr>
+        <tr>
+    <td><input type="button" value="1" onclick="view('1')"></td>
+   <td> <input type="button" value="2" onclick="view('2')"></td>
+    <td><input type="button" value="3" onclick="view('3')"></td>
+</tr>
+<tr>
+   <td> <input type="button" value="4" onclick="view('4')"></td>
+   <td> <input type="button" value="5" onclick="view('5')"></td>
+    <td><input type="button" value="6" onclick="view('6')"></td>
+</tr>
+<tr>
+    <td><input type="button" value="7" onclick="view('7')"></td>
+    <td> <input type="button" value="8" onclick="view('8')"></td>
+    <td><input type="button" value="9" onclick="view('9')"></td>
+    </tr>
+    <tr>
+        <td colspan="3"><input type="button" value="clear"id="a1" onclick="clr()"></td>
+    </tr>
+    <tr>
+    <td colspan="3"> <input type="button" value="SumofDigit" onclick="compute()" id="b1"></td>
+    </tr>
+    <tr>
+    <td colspan="3"><input type="button" value="CheckPalindrome"onclick="palindrome()" id="b2"></td>
+</tr>
+<tr>
+    <td colspan="3"><input type="button" value="CheckArmstrong"onclick="armstrong()" id="b3"></td>
+</tr>  
+</tr>
+</table>
+
+<script type="text/javascript">
+function view(num)
+{
+    document.getElementById("s1").value+=num;
+}
+function compute()
+{
+    var sum=0;
+    var rem;
+    var num1=document.getElementById("s1").value;
+    while(num1>0 )
+    {
+        rem=num1%10;
+        sum=sum+rem;
+        num1=parseInt(num1/10);
+
+    }
+    document.getElementById("s1").value=sum;
+
+}
+function clr()
+{
+    document.getElementById("s1").value=" ";
+}
+function palindrome()
+{
+    var rem;
+  var sum=0;
+  
+  
+  
+  var num2=document.getElementById("s1").value;
+  var c=num2;
+  while(num2>0)
+  {
+    rem=num2%10;
+    sum=sum*10+rem;
+    num2=parseInt(num2/10);
+  }
+  if(c==sum)
+  {
+    document.getElementById("s1").value="palindrome";
+  }
+  else
+  {
+    document.getElementById("s1").value="not";
+  }
+}
+function armstrong()
+{
+    var rem;
+    var arm=0;
+    var num3=document.getElementById("s1").value;
+    var c=num3;
+    while(num3>0)
+    {
+        rem=num3%10;
+        arm=arm+(rem*rem*rem);
+        num3=parseInt(num3/10);
+    }
+    if(c==arm)
+    {
+        document.getElementById("s1").value="Armstrong";
+    }
+    else{
+        document.getElementById("s1").value="Not";
+    }
+
+}
+
+</script>
+</body>
+</html>
